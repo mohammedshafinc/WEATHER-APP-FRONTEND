@@ -56,6 +56,9 @@
                     </div>
                 </template>
             </Suspense>
+            <template v-if="isLoggedIn">
+        <button @click="logout">Logout</button>
+      </template>
         </div>
 
         <div>
@@ -73,6 +76,15 @@ import { useRouter } from "vue-router";
 import citylistVue from "@/components/citylist.vue";
 
 const router = useRouter();
+
+const isLoggedIn = ref(false);
+const loggedInUser = ref(null);
+const logout = async () => {
+  
+  isLoggedIn.value = false;
+  loggedInUser.value = null;
+  router.push('/'); 
+}
 
 // show city function
 

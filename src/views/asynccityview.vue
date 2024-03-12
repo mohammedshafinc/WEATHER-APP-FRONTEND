@@ -6,8 +6,8 @@
         <p class="text-6xl mt-2">{{ Math.round(weatherData.data.main.temp) }}&deg</p>
         <div class="text-center mt-4">Feels like   {{ Math.round(weatherData.data.main.feels_like) }}&deg</div>
         <!-- <p>{{ p }}</p> -->
-        <div class="capitalize">
-          {{ weatherData.data.weather[0].description }}
+        <div class="capitalize" >
+         <p class="ml-8"> {{ weatherData.data.weather[0].description }}</p>
           <img class="w-[150px] h-auto" :src="`http://openweathermap.org/img/wn/${weatherData.data.weather[0].icon}@2x.png`">
         </div>
       </div>

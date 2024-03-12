@@ -22,6 +22,7 @@
                 class="w-full bg-gray-100 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             </div>
+            <div v-if="errorMessage" class="text-red-500 text-center mt-4">{{ errorMessage }}</div>
             <div class="flex justify-center gap-4 items-center">
             <button
                 type="submit"
@@ -31,7 +32,7 @@
             </button>
             <a>Don't have an account? <span class="text-white cursor-pointer ml-1" @click.prevent="goToSignup">Signup</span></a>
             </div>
-            <div v-if="errorMessage" class="text-red-500 text-center mt-4">{{ errorMessage }}</div>
+            
         </form>
         </div>
     </template>

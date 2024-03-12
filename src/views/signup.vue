@@ -8,6 +8,7 @@ import router from "@/router";
 const fullName = ref('');
 const email = ref('');
 const password = ref('');
+const errorMessage = ref('');
 
 
 function goToLogin(){
@@ -36,7 +37,7 @@ async function signup() {
         console.log(response);
 
         if (response.data.errors) {
-            console.log("Error in signup: " + response.data.errors[0].message);
+            errorMessage.value = response.data.errors[0].message;
         } else {
             
             console.log(router)
@@ -79,6 +80,7 @@ async function signup() {
           <label for="password" class="w-1/3 text-right mr-4">Password:</label>
           <input type="password" id="password" v-model="password" required class="w-full bg-gray-100 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
+        <div v-if="errorMessage" class="text-red-500 text-center mt-4">{{ errorMessage }}</div>
         <div class=" flex justify-center gap-4 items-center">
             <button type="submit" class="w-[100px] ml-28 py-2 text-center bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
 
