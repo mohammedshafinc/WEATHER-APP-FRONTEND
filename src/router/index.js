@@ -2,9 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/home.vue'
 import signup from '../views/signup.vue'
 import cityView from '../views/cityView.vue'
+import asyncview from '../views/asynccityview.vue'
+import login from '../views/login.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -20,6 +22,16 @@ const router = createRouter({
       path:'/city/:state/:city',
       name:'city',
       component:cityView
+    },
+    {
+      path:'/async',
+      name:'asyncview',
+      component:asyncview
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:login
     }
    
   ]
